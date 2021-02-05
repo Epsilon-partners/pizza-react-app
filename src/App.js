@@ -22,7 +22,7 @@ function App() {
       <Order {...orders} {...openFood} />
       <Banner />
       <Menu {...openFood} />
-    </>
+    </> 
   );
 }
 
