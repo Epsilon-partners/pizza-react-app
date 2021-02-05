@@ -10,6 +10,8 @@ const NavbarStyled = styled.div`
   position: fixed;
   width: 100%;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Logo = styled(Title)`
@@ -18,13 +20,27 @@ const Logo = styled(Title)`
   text-shadow: 1px 1px 4px #380502;
 `;
 
-export function Navbar() {
+const UserStatus = styled.div`
+  color: black;
+  font-size: 12px;
+  margin-right: 30px;
+`;
+
+const LoginButton = styled.div`
+  cursor: pointer;
+
+`;
+
+export function Navbar({login}) {
   return (
     <NavbarStyled>
       <Logo>
         <img src={goaLogo} alt="Goa Logo" width="44" height="44" />
         <img src={goaTitle} alt="Goa Title" width="70" height="40" />
       </Logo>
+      <UserStatus>
+        <LoginButton onClick={login}>Se connecter</LoginButton>
+      </UserStatus>
     </NavbarStyled>
   );
 }
